@@ -1,6 +1,6 @@
-import './App.css';
+import './public/css/App.css';
 import React from 'react';
-import BarChart from "./components/barChart/BarChart";
+import BarChart from "./components/BarChart";
 
 function App() {
   return (

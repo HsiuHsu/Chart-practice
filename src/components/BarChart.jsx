@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Chart as ChartJS, Legend, Tooltip, BarElement, CategoryScale, LinearScale } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import axios from 'axios';
-import '../barChart/barChart.css'
+import '../public/css/barChart.css'
 
 ChartJS.register(
     CategoryScale, LinearScale, BarElement,
