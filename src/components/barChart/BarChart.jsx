@@ -31,46 +31,6 @@ function BarChart() {
     // }
     const [taipeiSiteMap, setTaipeiGetSiteMap] = useState(null)
 
-    const districtMap = new Map()   // 利用map當唯一索引 key:台北市xx地區 value:戶口人數等資料
-    // 抓取Api資料
-    const fetchData = async () => {
-        axios.get(`${baseUrl}`).then(response => {
-            const allPopulationData = response.data.responseData
-            for (const population of allPopulationData) {
-                if (population.site_id.includes('臺北市')) {  // 篩選資料 只要臺北市
-                    let taipeiDistrict = population.site_id.replace('臺北市', '')  //  xx區
-                    if (districtMap.has(taipeiDistrict)) { // 第一次後掃到xx區的資料  計算總數
-                        const singleArea = districtMap.get(taipeiDistrict);
-                        const newSingleArea = {
-                            ordinaryMale: singleArea.ordinaryMale + Number(population.household_ordinary_m),
-                            singleMale: singleArea.ordinaryMale + Number(population.household_single_m),
-                            ordinaryFemale: singleArea.ordinaryFemale + Number(population.household_ordinary_f),
-                            singleFemale: singleArea.singleFemale + Number(population.household_single_f)
-                        }
-                        districtMap.set(taipeiDistrict, newSingleArea)
-                    }
-                    else { // 第一次掃到xx區
-                        setDistrictList(pre => [...pre, taipeiDistrict])  // 台北市所有的地區
-                        districtMap.set(taipeiDistrict, {
-                            ordinaryMale: Number(population.household_ordinary_m),
-                            singleMale: Number(population.household_single_m),
-                            ordinaryFemale: Number(population.household_ordinary_f),
-                            singleFemale: Number(population.household_single_f)
-                        })
-                    }
-                }
-            }
-            setTaipeiGetSiteMap(districtMap)
-        })
-            .catch(error => console.log('error :', error))
-    }
-    // 於chart內的資料 Taipei XX區 共同生活戶/獨立生活戶 的 男/女 資料
-    const handleChartData = () => {
-        if (taipeiSiteMap != null) {
-            const singleDistrict = taipeiSiteMap.get(district)
-            setGetAreaData({ man: [singleDistrict.ordinaryMale, singleDistrict.singleMale], female: [singleDistrict.ordinaryFemale, singleDistrict.singleFemale] })
-        }
-    }
     // chart data in Bar component
     const barData = {
         labels: ['共同生活戶', '獨立生活戶'],
@@ -112,10 +72,52 @@ function BarChart() {
     }
     // 抓取api資料
     useEffect(() => {
+
+        const districtMap = new Map()   // 利用map當唯一索引 key:台北市xx地區 value:戶口人數等資料
+        // 抓取Api資料
+        const fetchData = async () => {
+            axios.get(`${baseUrl}`).then(response => {
+                const allPopulationData = response.data.responseData
+                for (const population of allPopulationData) {
+                    if (population.site_id.includes('臺北市')) {  // 篩選資料 只要臺北市
+                        let taipeiDistrict = population.site_id.replace('臺北市', '')  //  xx區
+                        if (districtMap.has(taipeiDistrict)) { // 第一次後掃到xx區的資料  計算總數
+                            const singleArea = districtMap.get(taipeiDistrict);
+                            const newSingleArea = {
+                                ordinaryMale: singleArea.ordinaryMale + Number(population.household_ordinary_m),
+                                singleMale: singleArea.ordinaryMale + Number(population.household_single_m),
+                                ordinaryFemale: singleArea.ordinaryFemale + Number(population.household_ordinary_f),
+                                singleFemale: singleArea.singleFemale + Number(population.household_single_f)
+                            }
+                            districtMap.set(taipeiDistrict, newSingleArea)
+                        }
+                        else { // 第一次掃到xx區
+                            setDistrictList(pre => [...pre, taipeiDistrict])  // 台北市所有的地區
+                            districtMap.set(taipeiDistrict, {
+                                ordinaryMale: Number(population.household_ordinary_m),
+                                singleMale: Number(population.household_single_m),
+                                ordinaryFemale: Number(population.household_ordinary_f),
+                                singleFemale: Number(population.household_single_f)
+                            })
+                        }
+                    }
+                }
+                setTaipeiGetSiteMap(districtMap)
+            })
+                .catch(error => console.log('error :', error))
+        }
         fetchData()
     }, [])
     // chart顯示資料
     useEffect(() => {
+
+        // 於chart內的資料 Taipei XX區 共同生活戶/獨立生活戶 的 男/女 資料
+        const handleChartData = () => {
+            if (taipeiSiteMap != null) {
+                const singleDistrict = taipeiSiteMap.get(district)
+                setGetAreaData({ man: [singleDistrict.ordinaryMale, singleDistrict.singleMale], female: [singleDistrict.ordinaryFemale, singleDistrict.singleFemale] })
+            }
+        }
         handleChartData()
     }, [taipeiSiteMap, district])
 

@@ -38,7 +38,7 @@
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
-    background: url(../../../public/svg/angle-down-solid.svg) 95% 50% no-repeat scroll transparent;
+    background: url(../../public/svg/angle-down-solid.svg) 95% 50% no-repeat scroll transparent;
     background-size: 12px;
 
     margin-left: 12px;
