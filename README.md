@@ -31,6 +31,6 @@ The page will reload if you make edits. You will also see any lint errors in the
 
 Responsive Web Design for browsing chart in various screen sizes.
 
-In the chart, select a district to view information on the population of that district.
+In the chart, select a district to view information on the population of that district. Hover the mouse pointer over the Vertical bar to show the number of people in the item.
 
 ![](https://i.imgur.com/65dNHTT.png)
