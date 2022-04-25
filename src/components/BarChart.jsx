@@ -127,9 +127,9 @@ function BarChart() {
             <div className='chartGroup'>
                 <div className='selectGroup'>
                     <p>地區 :</p>
-                    <select name='districtName' onChange={(e) => setDistrict(e.target.value)}>
+                    <select name='districtName' onChange={(e) => setDistrict(e.target.value)} value={district}>
                         {
-                            districtList.map(districtItem => (<option key={Math.random()} value={districtItem} >{districtItem}</option>))
+                            districtList.map(districtItem => (<option key={districtItem} value={districtItem} >{districtItem}</option>))
                         }
                     </select>
                 </div>
