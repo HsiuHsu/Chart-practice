@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/chart-practice/static/css/main.556d2ec7.css",
-    "main.js": "/chart-practice/static/js/main.72b92cb1.js",
+    "main.js": "/chart-practice/static/js/main.e8420a20.js",
     "static/js/787.3f671e6a.chunk.js": "/chart-practice/static/js/787.3f671e6a.chunk.js",
     "index.html": "/chart-practice/index.html",
     "static/media/angle-down-solid.svg": "/chart-practice/static/media/angle-down-solid.4e67b88abf70a8aa668b.svg",
     "main.556d2ec7.css.map": "/chart-practice/static/css/main.556d2ec7.css.map",
-    "main.72b92cb1.js.map": "/chart-practice/static/js/main.72b92cb1.js.map",
+    "main.e8420a20.js.map": "/chart-practice/static/js/main.e8420a20.js.map",
     "787.3f671e6a.chunk.js.map": "/chart-practice/static/js/787.3f671e6a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.556d2ec7.css",
-    "static/js/main.72b92cb1.js"
+    "static/js/main.e8420a20.js"
   ]
 }
