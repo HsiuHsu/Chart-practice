@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/chart-practice/static/css/main.556d2ec7.css",
-    "main.js": "/chart-practice/static/js/main.4f19892f.js",
+    "main.js": "/chart-practice/static/js/main.71e41089.js",
     "static/js/787.3f671e6a.chunk.js": "/chart-practice/static/js/787.3f671e6a.chunk.js",
     "static/media/taipeilogo.png": "/chart-practice/static/media/taipeilogo.485cc5d8643acb6500df.png",
     "index.html": "/chart-practice/index.html",
     "static/media/angle-down-solid.svg": "/chart-practice/static/media/angle-down-solid.4e67b88abf70a8aa668b.svg",
     "main.556d2ec7.css.map": "/chart-practice/static/css/main.556d2ec7.css.map",
-    "main.4f19892f.js.map": "/chart-practice/static/js/main.4f19892f.js.map",
+    "main.71e41089.js.map": "/chart-practice/static/js/main.71e41089.js.map",
     "787.3f671e6a.chunk.js.map": "/chart-practice/static/js/787.3f671e6a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.556d2ec7.css",
-    "static/js/main.4f19892f.js"
+    "static/js/main.71e41089.js"
   ]
 }
