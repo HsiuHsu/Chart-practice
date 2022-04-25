@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import BarChart from "./components/BarChart";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className='header'>
+        <div className='wrap'>
+          <div className='logo' >
+            <img src='png/taipeilogo.png' alt='taipei-logo' />
+          </div>
+          <h1>臺北市<span>109年</span>人口戶數及性別</h1>
+        </div>
+      </div>
+      <div className='container'>
+        <div className='wrap'>
+          <BarChart />
+        </div>
+      </div>
     </div>
   );
 }

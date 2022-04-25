@@ -1,0 +1,81 @@
+.barChartGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 48px 0;
+}
+
+.chartGroup {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.chartItem {
+    width: 100%;
+    display: flex;
+    height: 400px;
+    box-sizing: border-box;
+}
+
+.selectGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.selectGroup p {
+    font-size: 16px;
+    color: #1d3557;
+}
+
+.selectGroup select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(../../public/png/angle-down-solid.svg) 95% 50% no-repeat scroll transparent;
+    background-size: 12px;
+
+    margin-left: 12px;
+    padding: 0 6px;
+    height: 36px;
+    border: 1px solid #457b9d;
+    border-radius: 4px;
+    width: 30%;
+    color: #1d3557;
+    font-size: 16px;
+
+}
+
+.selectGroup select:focus {
+    border: 0;
+    outline: 2px solid #457b9d;
+}
+
+@media screen and (max-width: 904px) {
+
+    .barChartGroup {
+        flex-direction: column;
+        align-items: center;
+        padding: 24px 0;
+    }
+
+    .chartGroup {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .chartGroup {
+        width: 90%;
+    }
+
+    .selectGroup select {
+        width: 50%;
+    }
+}
