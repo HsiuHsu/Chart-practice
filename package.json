@@ -2,7 +2,7 @@
   "name": "chart-practice",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://HsiuHsu.github.io/chart-practice",
+  "homepage": "https://hsiuhsu.github.io/chart-practice",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
