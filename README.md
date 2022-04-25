@@ -6,8 +6,9 @@ To see the number of households in the Taipei City district, the data is divided
 
 ## Tech Stack
 
-Front-end: ReactJs, Chart.js
-API: [Number of households and population by household and gender](https://data.gov.tw/dataset/14299)
+**Front-end**: ReactJs, Chart.js
+
+**API**: [Number of households and population by household and gender](https://data.gov.tw/dataset/14299)
 
 ## Running App
 
@@ -29,6 +30,7 @@ The page will reload if you make edits. You will also see any lint errors in the
 ## User Interface
 
 Responsive Web Design for browsing chart in various screen sizes.
+
 In the chart, select a district to view information on the population of that district.
 
 ![](https://i.imgur.com/65dNHTT.png)
